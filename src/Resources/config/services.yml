@@ -1,0 +1,6 @@
+services:
+
+    vig.sitemap.generator:
+        class: VideInfra\SitemapBundle\Service\SitemapGenerator
+        arguments:
+            - '@templating'
