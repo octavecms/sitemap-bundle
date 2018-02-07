@@ -27,7 +27,7 @@ class SitemapGenerator
     public function __construct(TwigEngine $templating, $rootDir, $path)
     {
         $this->templating = $templating;
-        $this->path = realpath($rootDir . '../web/' . $path);
+        $this->path = realpath($rootDir . '/../web') . '/' . $path;
     }
 
     /**
