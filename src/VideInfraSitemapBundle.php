@@ -1,5 +1,7 @@
 <?php
 
+namespace VideInfra\SitemapBundle;
+
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use VideInfra\SitemapBundle\DependencyInjection\Compiler\SourcePass;
