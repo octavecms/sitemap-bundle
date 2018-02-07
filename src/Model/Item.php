@@ -20,6 +20,21 @@ class Item
     private $priority;
 
     /**
+     * Item constructor.
+     * @param null $location
+     * @param null $lastmod
+     * @param null $changefreq
+     * @param null $priority
+     */
+    public function __construct($location = null, $lastmod = null, $changefreq = null, $priority = null)
+    {
+        $this->location = $location;
+        $this->lastmod = $lastmod;
+        $this->changefreq = $changefreq;
+        $this->priority = $priority;
+    }
+
+    /**
      * @return string
      */
     public function getLocation()

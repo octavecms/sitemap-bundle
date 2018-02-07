@@ -1,6 +1,11 @@
+parameters:
+    vig.sitemap.path: 'sitemap.xml'
+
 services:
 
     vig.sitemap.generator:
         class: VideInfra\SitemapBundle\Service\SitemapGenerator
         arguments:
             - '@templating'
+            - '%kernel.root_dir%'
+            - '%vig.sitemap.path%'

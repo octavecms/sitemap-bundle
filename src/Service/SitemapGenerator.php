@@ -21,10 +21,13 @@ class SitemapGenerator
     /**
      * SitemapGenerator constructor.
      * @param TwigEngine $templating
+     * @param $rootDir
+     * @param $path
      */
-    public function __construct(TwigEngine $templating)
+    public function __construct(TwigEngine $templating, $rootDir, $path)
     {
         $this->templating = $templating;
+        $this->path = realpath($rootDir . '../web/' . $path);
     }
 
     /**
