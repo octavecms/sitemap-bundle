@@ -7,6 +7,14 @@ namespace VideInfra\SitemapBundle\Model;
  */
 class Item
 {
+    const FREQ_ALWAYS = 'always';
+    const FREQ_HOURLY = 'hourly';
+    const FREQ_DAILY = 'daily';
+    const FREQ_WEEKLY = 'weekly';
+    const FREQ_MONTHLY = 'monthly';
+    const FREQ_YEARLY = 'yearly';
+    const FREQ_NEVER = 'never';
+
     /** @var string */
     private $location;
 
@@ -16,22 +24,31 @@ class Item
     /** @var string */
     private $changefreq;
 
-    /** @var integer */
+    /** @var float */
     private $priority;
 
     /**
      * Item constructor.
      * @param null $location
      * @param null $lastmod
-     * @param null $changefreq
-     * @param null $priority
+     * @param null|string $changefreq
+     * @param float|null $priority
      */
-    public function __construct($location = null, $lastmod = null, $changefreq = null, $priority = null)
+    public function __construct($location = null, $lastmod = null, $changefreq = self::FREQ_DAILY, $priority = 1.0)
     {
         $this->location = $location;
-        $this->lastmod = $lastmod;
         $this->changefreq = $changefreq;
         $this->priority = $priority;
+
+        if (!$lastmod) {
+            $lastmod = new \DateTime();
+        }
+
+        if ($lastmod instanceof \DateTime) {
+            $lastmod = $lastmod->format('c');
+        }
+
+        $this->lastmod = $lastmod;
     }
 
     /**
@@ -83,7 +100,7 @@ class Item
     }
 
     /**
-     * @return int
+     * @return float
      */
     public function getPriority()
     {
@@ -91,7 +108,7 @@ class Item
     }
 
     /**
-     * @param int $priority
+     * @param float $priority
      */
     public function setPriority($priority)
     {
