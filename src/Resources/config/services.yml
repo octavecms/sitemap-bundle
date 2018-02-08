@@ -1,5 +1,6 @@
 parameters:
     vig.sitemap.path: 'sitemap.xml'
+    vig.sitemap.host: ~
 
 services:
 
