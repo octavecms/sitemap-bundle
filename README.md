@@ -1,9 +1,9 @@
-VideInfraSitemapBundle
+OctaveSitemapBundle
 ========================
 
 ## Installation
 
-### Step 1: Download VideInfraSitemapBundle using composer
+### Step 1: Download OctaveSitemapBundle using composer
 
 Add a custom git repository to your composer.json
 
@@ -11,7 +11,7 @@ Add a custom git repository to your composer.json
 "repositories": [
         {
             "type": "git",
-            "url": "https://git.videinfra.net/vig-bundles/sitemap-bundle.git"
+            "url": "https://git.Octave.net/vig-bundles/sitemap-bundle.git"
         }
     ]
 ```
@@ -39,7 +39,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new VideInfra\SitemapBundle\VideInfraSitemapBundle(),
+        new Octave\SitemapBundle\OctaveSitemapBundle(),
         // ...
     );
 }
@@ -52,8 +52,8 @@ public function registerBundles()
 
 namespace AppBundle\Service;
 
-use VideInfra\SitemapBundle\Service\SourceInterface;
-use VideInfra\SitemapBundle\Model\Item;
+use Octave\SitemapBundle\Service\SourceInterface;
+use Octave\SitemapBundle\Model\Item;
 
 class AppSitemapSource implements SourceInterface
 {
@@ -76,5 +76,5 @@ services:
     app.sitemap.source:
         class: AppBundle\Service\AppSitemapSource
         tags:
-            - { name: 'vig.sitemap.source' }
+            - { name: 'octave.sitemap.source' }
 ```

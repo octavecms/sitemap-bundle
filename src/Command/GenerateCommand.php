@@ -1,18 +1,18 @@
 <?php
 
-namespace VideInfra\SitemapBundle\Command;
+namespace Octave\SitemapBundle\Command;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
- * @author Igor Lukashov <igor.lukashov@videinfra.com>
+ * @author Igor Lukashov <igor.lukashov@octavecms.com>
  */
 class GenerateCommand extends ContainerAwareCommand
 {
     protected function configure()
     {
-        $this->setName('vig:sitemap:generate');
+        $this->setName('octave:sitemap:generate');
     }
 
     /**
@@ -22,7 +22,7 @@ class GenerateCommand extends ContainerAwareCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $this->getContainer()->get('vig.sitemap.generator')->generate();
+        $this->getContainer()->get('octave.sitemap.generator')->generate();
     }
 
 }

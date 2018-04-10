@@ -1,15 +1,15 @@
 <?php
 
-namespace VideInfra\SitemapBundle;
+namespace Octave\SitemapBundle;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
-use VideInfra\SitemapBundle\DependencyInjection\Compiler\SourcePass;
+use Octave\SitemapBundle\DependencyInjection\Compiler\SourcePass;
 
 /**
- * @author Igor Lukashov <igor.lukashov@videinfra.com>
+ * @author Igor Lukashov <igor.lukashov@octavecms.com>
  */
-class VideInfraSitemapBundle extends Bundle
+class OctaveSitemapBundle extends Bundle
 {
     /**
      * @param ContainerBuilder $container

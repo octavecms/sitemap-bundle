@@ -1,6 +1,6 @@
 <?php
 
-namespace VideInfra\SitemapBundle\Service;
+namespace Octave\SitemapBundle\Service;
 
 interface SourceInterface
 {

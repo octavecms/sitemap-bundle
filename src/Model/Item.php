@@ -1,9 +1,9 @@
 <?php
 
-namespace VideInfra\SitemapBundle\Model;
+namespace Octave\SitemapBundle\Model;
 
 /**
- * @author Igor Lukashov <igor.lukashov@videinfra.com>
+ * @author Igor Lukashov <igor.lukashov@octavecms.com>
  */
 class Item
 {

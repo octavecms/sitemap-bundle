@@ -4,11 +4,11 @@
   "description": "Symfony sitemap generator",
   "license": "MIT",
   "keywords": ["sitemap", "generator"],
-  "homepage": "http://videinfra.com",
+  "homepage": "http://octavecms.com",
   "authors": [
     {
       "name": "Igor Lukashov",
-      "email": "igor.lukashov@videinfra.com",
+      "email": "igor.lukashov@octavecms.com",
       "role": "Developer"
     }
   ],
@@ -18,7 +18,7 @@
   },
   "autoload": {
     "psr-4": {
-      "VideInfra\\SitemapBundle\\": "src/"
+      "Octave\\SitemapBundle\\": "src/"
     }
   }
 }

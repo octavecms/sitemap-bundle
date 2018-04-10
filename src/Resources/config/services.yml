@@ -1,12 +1,12 @@
 parameters:
-    vig.sitemap.path: 'sitemap.xml'
-    vig.sitemap.host: ~
+    octave.sitemap.path: 'sitemap.xml'
+    octave.sitemap.host: ~
 
 services:
 
-    vig.sitemap.generator:
-        class: VideInfra\SitemapBundle\Service\SitemapGenerator
+    octave.sitemap.generator:
+        class: Octave\SitemapBundle\Service\SitemapGenerator
         arguments:
             - '@templating'
             - '%kernel.root_dir%'
-            - '%vig.sitemap.path%'
+            - '%octave.sitemap.path%'

@@ -1,11 +1,11 @@
 <?php
 
-namespace VideInfra\SitemapBundle\Service;
+namespace Octave\SitemapBundle\Service;
 
 use Symfony\Bundle\TwigBundle\TwigEngine;
 
 /**
- * @author Igor Lukashov <igor.lukashov@videinfra.com>
+ * @author Igor Lukashov <igor.lukashov@octavecms.com>
  */
 class SitemapGenerator
 {
@@ -50,7 +50,7 @@ class SitemapGenerator
             $items = array_merge($items, $source->getItems());
         }
 
-        $content = $this->templating->render('VideInfraSitemapBundle::sitemap.xml.twig', [
+        $content = $this->templating->render('OctaveSitemapBundle::sitemap.xml.twig', [
             'items' => $items
         ]);
 
