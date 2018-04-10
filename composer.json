@@ -1,5 +1,5 @@
 {
-  "name": "vig/sitemap-bundle",
+  "name": "octave/sitemap-bundle",
   "type": "library",
   "description": "Symfony sitemap generator",
   "license": "MIT",
