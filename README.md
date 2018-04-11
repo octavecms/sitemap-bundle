@@ -1,4 +1,4 @@
-OctaveSitemapBundle
+Octave Sitemap Bundle
 ========================
 
 ## Installation
@@ -21,7 +21,7 @@ Require the bundle
 ```json
 "require": {
     ... some repositories
-    "vig/sitemap-bundle": "^1.0.0"
+    "octave/sitemap-bundle": "^1.0.0"
 }
 ```
 
