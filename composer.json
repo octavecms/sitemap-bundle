@@ -1,6 +1,6 @@
 {
   "name": "octave/sitemap-bundle",
-  "type": "library",
+  "type": "symfony-bundle",
   "description": "Symfony sitemap generator",
   "license": "MIT",
   "keywords": ["sitemap", "generator"],
