@@ -5,17 +5,6 @@ Octave Sitemap Bundle
 
 ### Step 1: Download OctaveSitemapBundle using composer
 
-Add a custom git repository to your composer.json
-
-```json
-"repositories": [
-        {
-            "type": "git",
-            "url": "https://git.Octave.net/vig-bundles/sitemap-bundle.git"
-        }
-    ]
-```
-
 Require the bundle
 
 ```json
