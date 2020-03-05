@@ -3,6 +3,7 @@
 namespace Octave\SitemapBundle\Service;
 
 use Symfony\Bundle\TwigBundle\TwigEngine;
+use Symfony\Component\HttpKernel\Kernel;
 
 /**
  * @author Igor Lukashov <igor.lukashov@octavecms.com>
@@ -27,7 +28,11 @@ class SitemapGenerator
     public function __construct(TwigEngine $templating, $rootDir, $path)
     {
         $this->templating = $templating;
-        $this->path = realpath($rootDir . '/../web') . '/' . $path;
+        if (Kernel::MAJOR_VERSION >= 4 ) {
+            $this->path = realpath($rootDir . '/../public') . '/' . $path;
+        } else {
+            $this->path = realpath($rootDir . '/../web') . '/' . $path;
+        }
     }
 
     /**

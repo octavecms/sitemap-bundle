@@ -4,8 +4,12 @@ parameters:
 
 services:
 
+    Octave\SitemapBundle\Command\GenerateCommand:
+        tags: ['console.command']
+
     octave.sitemap.generator:
         class: Octave\SitemapBundle\Service\SitemapGenerator
+        public: true
         arguments:
             - '@templating'
             - '%kernel.root_dir%'
