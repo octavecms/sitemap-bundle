@@ -83,6 +83,7 @@ class SitemapGenerator
 
             $items = $source->getItems();
             $itemsCount = count($items);
+            if (!$itemsCount) continue;
 
             if ($itemsCount > $sliceCount) {
 
