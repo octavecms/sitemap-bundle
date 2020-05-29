@@ -14,3 +14,4 @@ services:
             - '@templating'
             - '%kernel.root_dir%'
             - '%octave.sitemap.path%'
+            - '%octave.sitemap.host%'
