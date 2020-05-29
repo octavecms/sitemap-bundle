@@ -3,6 +3,7 @@
 namespace Octave\SitemapBundle\Command;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
@@ -12,7 +13,10 @@ class GenerateCommand extends ContainerAwareCommand
 {
     protected function configure()
     {
-        $this->setName('octave:sitemap:generate');
+        $this
+            ->setName('octave:sitemap:generate')
+            ->addOption('index', 'i', InputOption::VALUE_NONE)
+        ;
     }
 
     /**
@@ -22,7 +26,11 @@ class GenerateCommand extends ContainerAwareCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $this->getContainer()->get('octave.sitemap.generator')->generate();
+        if ($input->getOption('index')) {
+            $this->getContainer()->get('octave.sitemap.generator')->generateIndex();
+        }
+        else {
+            $this->getContainer()->get('octave.sitemap.generator')->generate();
+        }
     }
-
 }
