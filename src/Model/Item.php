@@ -29,10 +29,11 @@ class Item
 
     /**
      * Item constructor.
-     * @param null $location
-     * @param null $lastmod
+     * @param null|string $location
+     * @param null|mixed $lastmod
      * @param null|string $changefreq
      * @param float|null $priority
+     * @throws \Exception
      */
     public function __construct($location = null, $lastmod = null, $changefreq = self::FREQ_DAILY, $priority = 1.0)
     {
