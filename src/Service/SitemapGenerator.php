@@ -4,6 +4,7 @@ namespace Octave\SitemapBundle\Service;
 
 use Symfony\Bundle\TwigBundle\TwigEngine;
 use Symfony\Component\HttpKernel\Kernel;
+use Twig\Environment;
 
 /**
  * @author Igor Lukashov <igor.lukashov@octavecms.com>
@@ -27,12 +28,12 @@ class SitemapGenerator
 
     /**
      * SitemapGenerator constructor.
-     * @param TwigEngine $templating
+     * @param Environment $templating
      * @param $rootDir
      * @param $path
      * @param $host
      */
-    public function __construct(TwigEngine $templating, $rootDir, $path, $host)
+    public function __construct(Environment $templating, $rootDir, $path, $host)
     {
         $this->templating = $templating;
         $this->host = $host;

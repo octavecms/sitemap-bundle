@@ -6,12 +6,14 @@ services:
 
     Octave\SitemapBundle\Command\GenerateCommand:
         tags: ['console.command']
+        arguments:
+            - '@octave.sitemap.generator'
 
     octave.sitemap.generator:
         class: Octave\SitemapBundle\Service\SitemapGenerator
         public: true
         arguments:
-            - '@templating'
-            - '%kernel.root_dir%'
+            - '@twig'
+            - '%kernel.project_dir%'
             - '%octave.sitemap.path%'
             - '%octave.sitemap.host%'

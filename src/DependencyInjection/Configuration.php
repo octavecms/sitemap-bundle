@@ -17,8 +17,7 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('octave_sitemap');
+        $treeBuilder = new TreeBuilder('octave_sitemap');
 
         return $treeBuilder;
     }
