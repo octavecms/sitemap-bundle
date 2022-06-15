@@ -16,6 +16,7 @@ class GenerateCommand extends Command
 
     public function __construct(SitemapGenerator $sitemapGenerator)
     {
+        parent::__construct();
         $this->sitemapGenerator = $sitemapGenerator;
     }
 
