@@ -40,7 +40,7 @@ class SitemapGenerator
         $this->webPath = $path;
 
         if (Kernel::MAJOR_VERSION >= 4 ) {
-            $this->path = realpath($rootDir . '/../public') . '/' . $path;
+            $this->path = realpath($rootDir . '/public') . '/' . $path;
         } else {
             $this->path = realpath($rootDir . '/../web') . '/' . $path;
         }
@@ -66,7 +66,7 @@ class SitemapGenerator
             $items = array_merge($items, $source->getItems());
         }
 
-        $content = $this->templating->render('OctaveSitemapBundle::sitemap.xml.twig', [
+        $content = $this->templating->render('@OctaveSitemap/sitemap.xml.twig', [
             'items' => $items
         ]);
 
@@ -92,7 +92,7 @@ class SitemapGenerator
                 foreach ($chunks as $chunkIndex => $chunk) {
 
                     $sitemapName = sprintf('%s/sitemap-%s-%s.xml', $this->path, $index, $chunkIndex);
-                    $content = $this->templating->render('OctaveSitemapBundle::sitemap.xml.twig', [
+                    $content = $this->templating->render('@OctaveSitemap/sitemap.xml.twig', [
                         'items' => $chunk
                     ]);
 
@@ -103,7 +103,7 @@ class SitemapGenerator
             else {
 
                 $sitemapName = sprintf('%s/sitemap-%s.xml', $this->path, $index);
-                $content = $this->templating->render('OctaveSitemapBundle::sitemap.xml.twig', [
+                $content = $this->templating->render('@OctaveSitemap/sitemap.xml.twig', [
                     'items' => $items
                 ]);
 
@@ -112,7 +112,7 @@ class SitemapGenerator
             }
         }
 
-        $index = $this->templating->render('OctaveSitemapBundle::index.xml.twig', [
+        $index = $this->templating->render('@OctaveSitemap/index.xml.twig', [
             'sitemaps' => $sitemaps
         ]);
 
