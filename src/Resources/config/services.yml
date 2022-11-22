@@ -1,6 +1,7 @@
 parameters:
     octave.sitemap.path: 'sitemap.xml'
     octave.sitemap.host: ~
+    octave.sitemap.root_dir: '%kernel.project_dir%'
 
 services:
 
@@ -14,6 +15,6 @@ services:
         public: true
         arguments:
             - '@twig'
-            - '%kernel.project_dir%'
+            - '%octave.sitemap.root_dir%'
             - '%octave.sitemap.path%'
             - '%octave.sitemap.host%'
