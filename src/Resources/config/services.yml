@@ -1,6 +1,7 @@
 parameters:
     octave.sitemap.path: 'sitemap.xml'
     octave.sitemap.host: ~
+    octave.sitemap.rood_dir: '%kernel.root_dir%'
 
 services:
 
@@ -12,6 +13,6 @@ services:
         public: true
         arguments:
             - '@templating'
-            - '%kernel.root_dir%'
+            - '%octave.sitemap.rood_dir%'
             - '%octave.sitemap.path%'
             - '%octave.sitemap.host%'
